@@ -1,0 +1,365 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Onecons — Design Manager (2026) | NGUYEN HOANG NAM">
+	<div class="onecons-page">
+		<!-- Thanh điều hướng phụ -->
+		<div class="breadcrumb">
+			<a href="/portfolio" class="back-btn">&larr; Back to Timeline</a>
+			<span class="step-indicator">01 / 06 &mdash; WORK EXPERIENCE</span>
+		</div>
+
+		<!-- Bố cục chính: Cột trái Scope of Work + Cột phải Lưới 5 Dự án -->
+		<div class="showcase-layout">
+			<!-- CỘT TRÁI: Thông tin công ty & Phạm vi công việc -->
+			<aside class="company-sidebar">
+				<div class="identity-box">
+					<h1 class="company-name">ONECONS</h1>
+					<p class="company-year">2026</p>
+					<p class="company-role"><strong>Role:</strong> Design Manager</p>
+				</div>
+
+				<div class="scope-section">
+					<h2 class="scope-heading">Scope of Work:</h2>
+					<ul class="scope-list">
+						<li>
+							Manage &amp; coordinate the Design Department: Architects, Structural Engineers, MEP Engineers, and Draftspersons.
+						</li>
+						<li>
+							Coordinate with other departments: Project Management (PM) and Quantity Surveying (QS).
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<!-- CỘT PHẢI: Lưới 5 dự án (Hàng trên 2 dự án lớn, Hàng dưới 3 dự án đứng) -->
+			<div class="projects-gallery">
+				<!-- HÀNG 1: 2 DỰ ÁN LỚN -->
+				<div class="gallery-row-top">
+					<article class="work-card">
+						<div class="img-container ratio-landscape">
+							<img
+								src="/images/onecons/dragon-legacy.jpg"
+								alt="Dragon Legacy"
+								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+							/>
+							<div class="img-fallback">DRAGON LEGACY</div>
+						</div>
+						<div class="project-tag">DRAGON LEGACY</div>
+					</article>
+
+					<article class="work-card">
+						<div class="img-container ratio-landscape">
+							<img
+								src="/images/onecons/joanna-villa.jpg"
+								alt="Joanna Villa"
+								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+							/>
+							<div class="img-fallback">JOANNA VILLA</div>
+						</div>
+						<div class="project-tag">JOANNA VILLA</div>
+					</article>
+				</div>
+
+				<!-- HÀNG 2: 3 DỰ ÁN DÁNG ĐỨNG -->
+				<div class="gallery-row-bottom">
+					<article class="work-card">
+						<div class="img-container ratio-portrait">
+							<img
+								src="/images/onecons/hn-apartment.jpg"
+								alt="HN Apartment"
+								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+							/>
+							<div class="img-fallback">HN APARTMENT</div>
+						</div>
+						<div class="project-tag">HN APARTMENT</div>
+					</article>
+
+					<article class="work-card">
+						<div class="img-container ratio-portrait">
+							<img
+								src="/images/onecons/sky-well.jpg"
+								alt="Sky-Well"
+								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+							/>
+							<div class="img-fallback">SKY-WELL</div>
+						</div>
+						<div class="project-tag">SKY-WELL</div>
+					</article>
+
+					<article class="work-card">
+						<div class="img-container ratio-portrait">
+							<img
+								src="/images/onecons/the-pixels.jpg"
+								alt="The Pixels"
+								onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+							/>
+							<div class="img-fallback">THE PIXELS</div>
+						</div>
+						<div class="project-tag">THE PIXELS</div>
+					</article>
+				</div>
+			</div>
+		</div>
+
+		<!-- Thanh chuyển tiếp sang công ty tiếp theo trên Timeline -->
+		<nav class="next-exp-bar">
+			<span class="next-label">NEXT MILESTONE (2025)</span>
+			<a href="/experience/slcc-novaland" class="next-link">
+				SLCC Corp, Novaland Group &mdash; Architect, Freelancer &rarr;
+			</a>
+		</nav>
+	</div>
+</Layout>
+
+<style>
+	.onecons-page {
+		margin-bottom: 4rem;
+	}
+
+	/* Thanh điều hướng phụ */
+	.breadcrumb {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 1.5rem;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid var(--border);
+	}
+	.back-btn {
+		font-size: 0.8rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--text-muted);
+		transition: color 0.25s ease;
+	}
+	.back-btn:hover {
+		color: var(--accent);
+	}
+	.step-indicator {
+		font-size: 0.75rem;
+		letter-spacing: 0.15em;
+		color: var(--text-muted);
+	}
+
+	/* Bố cục tổng thể 2 cột: Cột trái 310px, Cột phải giãn hết phần còn lại */
+	.showcase-layout {
+		display: grid;
+		grid-template-columns: 310px 1fr;
+		gap: 3rem;
+		align-items: start;
+		margin-bottom: 5rem;
+	}
+
+	/* ================= CỘT TRÁI ================= */
+	.company-sidebar {
+		position: sticky;
+		top: 2rem;
+	}
+	.identity-box {
+		background-color: #f0f0f0;
+		border: 1px solid #999999;
+		padding: 3rem 1.5rem;
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+	.company-name {
+		font-size: 1.65rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #0097a7; /* Đồng bộ màu tên công ty */
+		margin-bottom: 0.85rem;
+	}
+	.company-year {
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: var(--text-main);
+		margin-bottom: 0.75rem;
+	}
+	.company-role {
+		font-size: 1rem;
+		font-weight: 400;
+		color: var(--text-muted);
+	}
+	.company-role strong {
+		font-weight: 600;
+		color: var(--text-main);
+	}
+
+	/* Scope of Work */
+	.scope-heading {
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: var(--text-main);
+		margin-bottom: 1.1rem;
+		letter-spacing: 0.02em;
+	}
+	.scope-list {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
+	}
+	.scope-list li {
+		position: relative;
+		padding-left: 1.25rem;
+		font-size: 0.88rem;
+		color: var(--text-muted);
+		line-height: 1.65;
+	}
+	.scope-list li::before {
+		content: '•';
+		position: absolute;
+		left: 0;
+		top: -1px;
+		font-size: 1.1rem;
+		color: var(--text-main);
+	}
+
+	/* ================= CỘT PHẢI: LƯỚI 5 DỰ ÁN ================= */
+	.projects-gallery {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	/* Hàng trên: 2 cột bằng nhau */
+	.gallery-row-top {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.25rem;
+	}
+
+	/* Hàng dưới: 3 cột bằng nhau */
+	.gallery-row-bottom {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+
+	.work-card {
+		position: relative;
+		border: 1px solid var(--border);
+		background-color: #eeeeee;
+		overflow: hidden;
+		transition: border-color 0.25s ease;
+	}
+	.work-card:hover {
+		border-color: var(--accent);
+	}
+
+	.img-container {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+	.ratio-landscape {
+		aspect-ratio: 4 / 3;
+	}
+	.ratio-portrait {
+		aspect-ratio: 3 / 4.1;
+	}
+
+	.img-container img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+	.work-card:hover .img-container img {
+		transform: scale(1.04);
+	}
+
+	.img-fallback {
+		display: none;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		color: #999999;
+		text-align: center;
+		padding: 1rem;
+	}
+
+	/* Nhãn tên dự án đặt gọn góc dưới bên trái giống slide */
+	.project-tag {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background-color: rgba(250, 250, 250, 0.94);
+		padding: 0.35rem 0.85rem;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #0097a7;
+		border-top: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+		transition: color 0.25s ease;
+	}
+	.work-card:hover .project-tag {
+		color: var(--accent);
+	}
+
+	/* Thanh chuyển tiếp sang mốc tiếp theo */
+	.next-exp-bar {
+		padding-top: 2.5rem;
+		border-top: 1px solid var(--border);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.5rem;
+	}
+	.next-label {
+		font-size: 0.72rem;
+		letter-spacing: 0.16em;
+		color: var(--text-muted);
+	}
+	.next-link {
+		font-size: 1rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		color: var(--text-main);
+		text-decoration: none;
+		transition: color 0.25s ease;
+	}
+	.next-link:hover {
+		color: var(--accent);
+	}
+
+	/* ================= RESPONSIVE TABLET & MOBILE ================= */
+	@media (max-width: 900px) {
+		.showcase-layout {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+		.company-sidebar {
+			position: static;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.breadcrumb {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+		.gallery-row-top,
+		.gallery-row-bottom {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		.ratio-portrait {
+			aspect-ratio: 4 / 3; /* Trên mobile chuyển sang ngang nhẹ để đỡ cuộn quá dài */
+		}
+		.next-exp-bar {
+			align-items: flex-start;
+		}
+	}
+</style>

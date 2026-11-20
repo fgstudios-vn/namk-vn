@@ -1,0 +1,157 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header>
+	<div class="header-bar">
+		<a href="/" class="brand">N A M K</a>
+
+		<!-- Menu ngang dành cho Desktop -->
+		<nav class="nav-desktop">
+			<a href="/">Home</a>
+			<a href="/portfolio" class={currentPath.startsWith('/portfolio') ? 'active' : ''}>Portfolio</a>
+			<a href="/contact" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
+		</nav>
+
+		<!-- Nút Toggle dành cho Mobile -->
+		<button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" aria-expanded="false">
+			<span class="line"></span>
+			<span class="line"></span>
+		</button>
+	</div>
+
+	<!-- Khung menu thả xuống trên Mobile -->
+	<nav class="nav-mobile" id="navMobile">
+		<a href="/">Home</a>
+		<a href="/portfolio" class={currentPath.startsWith('/portfolio') ? 'active' : ''}>Portfolio</a>
+		<a href="/contact" class={currentPath.startsWith('/contact') ? 'active' : ''}>Contact</a>
+	</nav>
+</header>
+
+<script>
+	const toggleBtn = document.getElementById('menuToggle');
+	const mobileMenu = document.getElementById('navMobile');
+
+	if (toggleBtn && mobileMenu) {
+		toggleBtn.addEventListener('click', () => {
+			const isOpen = mobileMenu.classList.toggle('open');
+			toggleBtn.classList.toggle('open', isOpen);
+			toggleBtn.setAttribute('aria-expanded', String(isOpen));
+		});
+	}
+</script>
+
+<style>
+	header {
+		border-bottom: 1px solid var(--border);
+		margin-bottom: 4rem;
+	}
+	.header-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 1.5rem;
+	}
+	.brand {
+		font-size: 1.3rem;
+		font-weight: 400;
+		letter-spacing: 0.25em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--accent);
+		white-space: nowrap;
+	}
+
+	/* Menu Desktop */
+	.nav-desktop {
+		display: flex;
+		gap: 2rem;
+	}
+	.nav-desktop a {
+		font-size: 0.8rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--text-muted);
+		transition: color 0.25s ease;
+	}
+	.nav-desktop a:hover,
+	.nav-desktop a.active {
+		color: var(--accent);
+	}
+
+	/* Nút Toggle tối giản 2 gạch mảnh */
+	.menu-toggle {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 6px;
+		width: 36px;
+		height: 36px;
+		background: transparent;
+		border: 1px solid var(--border);
+		cursor: pointer;
+		padding: 0;
+		transition: border-color 0.25s ease;
+	}
+	.menu-toggle:hover {
+		border-color: var(--accent);
+	}
+	.menu-toggle .line {
+		width: 16px;
+		height: 1px;
+		background-color: var(--text-main);
+		transition: transform 0.25s ease, background-color 0.25s ease;
+	}
+	.menu-toggle:hover .line {
+		background-color: var(--accent);
+	}
+
+	/* Hiệu ứng xoay thành dấu X khi mở */
+	.menu-toggle.open .line:first-child {
+		transform: translateY(3.5px) rotate(45deg);
+		background-color: var(--accent);
+	}
+	.menu-toggle.open .line:last-child {
+		transform: translateY(-3.5px) rotate(-45deg);
+		background-color: var(--accent);
+	}
+
+	/* Menu thả xuống trên Mobile */
+	.nav-mobile {
+		display: none;
+		flex-direction: column;
+		gap: 1.2rem;
+		padding: 1.5rem 0 2rem 0;
+		border-top: 1px solid var(--border);
+	}
+	.nav-mobile.open {
+		display: flex;
+	}
+	.nav-mobile a {
+		font-size: 0.85rem;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--text-muted);
+		transition: color 0.25s ease;
+	}
+	.nav-mobile a:hover,
+	.nav-mobile a.active {
+		color: var(--accent);
+	}
+
+	/* Chuyển đổi giao diện trên màn hình Mobile (<= 640px) */
+	@media (max-width: 640px) {
+		header {
+			margin-bottom: 2.5rem;
+		}
+		.nav-desktop {
+			display: none;
+		}
+		.menu-toggle {
+			display: flex;
+		}
+	}
+</style>

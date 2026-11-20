@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	hideChrome?: boolean;
+}
+
+const { title, hideChrome = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/namk.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		{hideChrome ? (
+			<slot />
+		) : (
+			<div class="page-container">
+				<Header />
+				<main>
+					<slot />
+				</main>
+				<Footer />
+			</div>
+		)}
+	</body>
+</html>
+
+<style>
+	.page-container {
+		max-width: 1040px;
+		margin: 0 auto;
+		padding: 3.5rem 2rem;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	main {
+		flex: 1;
+	}
+</style>

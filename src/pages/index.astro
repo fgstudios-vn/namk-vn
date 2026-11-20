@@ -1,16 +1,37 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="NAMK" hideChrome={true}>
+	<main class="hero">
+		<h1>N A M K</h1>
+		<p>Welcome to Architect NGUYEN HOANG NAM's portfolio</p>
+		<a href="/portfolio" class="btn-outline">Explore Works &rarr;</a>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 1.5rem;
+	}
+	h1 {
+		font-size: 2.3rem;
+		font-weight: 400;
+		letter-spacing: 0.25em;
+		text-transform: uppercase;
+		color: var(--accent);
+		margin-bottom: 0.6rem;
+	}
+	p {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+		letter-spacing: 0.08em;
+		margin-bottom: 2.2rem;
+	}
+</style>
